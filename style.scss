@@ -1,0 +1,59 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header {
+    font-size: 50px;
+    height: 50vh;
+    background: #fff;
+    color: #E70006;   
+}
+
+.scene {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    position: relative;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.fin {
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #E70006;
+}
+// animation
+
+$frame-count: 15;
+$offset-val: 480;
+
+.viewer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 480px;
+    width: 480px;
+    background-image: url(ressources/gifsplit.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+@for $i from 1 through $frame-count {
+
+    .viewer.frame#{$i} {
+        background-position: -($i * $offset-val) + px 0;
+    }
+
+}
